@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { site } from '../data/site';
+import profileImg from '../assets/profile.png';
 ---
 
 <section class="hero section-wrapper">
@@ -23,13 +25,15 @@ import { site } from '../data/site';
     </div>
 
     <div class="hero-photo-container">
-      <img
-        src="/assets/profile.png"
+      <Image
+        src={profileImg}
         alt="Niklas Silla"
         class="hero-photo"
-        width="420"
-        height="560"
+        width="840"
+        height="1120"
         loading="eager"
+        format="webp"
+        quality={85}
       />
     </div>
   </div>
