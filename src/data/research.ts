@@ -1,5 +1,5 @@
 export const researchTopics: string[] = [
-  "Reliability und Evaluation von Agentic Systems",
-  "Tool-Use als Entscheidungsproblem",
-  "AI in betrieblichen Workflows (WI-Perspektive)",
+  "Explainable AI in Business Decision-Making",
+  "AI Security and Adversarial Robustness",
+  "AI for Energy Management Systems",
 ];
