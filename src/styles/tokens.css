@@ -1,6 +1,6 @@
 :root {
   /* Backgrounds */
-  --bg-primary: #0a0a0a;
+  --bg-primary: #000000;
   --bg-secondary: rgba(0, 0, 0, 0.4);
 
   /* Text */
@@ -13,7 +13,7 @@
   --accent-gold: #d4b572;
   --accent-gold-soft: rgba(212, 181, 114, 0.7);
   --accent-gold-line: rgba(212, 181, 114, 0.12);
-  --accent-gold-grid: rgba(212, 181, 114, 0.04);
+  --accent-gold-grid: rgba(212, 181, 114, 0.08);
   --accent-gold-glow: rgba(212, 181, 114, 0.08);
 
   /* Borders */
