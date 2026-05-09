@@ -128,31 +128,42 @@ import { site } from '../data/site';
     mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   }
 
-  /* Tablet */
+  /* Tablet / stacked */
   @media (max-width: 1023px) {
     .hero-inner {
       grid-template-columns: 1fr;
       min-height: auto;
       padding-top: 48px;
+      padding-bottom: 0;
+      justify-items: center;
+    }
+
+    .hero-content {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      max-width: 560px;
+      padding-bottom: 48px;
+    }
+
+    .hero-description {
+      max-width: 100%;
     }
 
     .hero-photo-container {
       min-height: 300px;
+      width: 100%;
     }
 
     .hero-photo {
-      max-height: 320px;
+      max-height: 360px;
     }
   }
 
-  /* Mobile */
+  /* Mobile — nur Schriftgröße */
   @media (max-width: 639px) {
     .hero-name {
       font-size: 36px;
-    }
-
-    .hero-photo-container {
-      display: none;
     }
   }
 </style>
