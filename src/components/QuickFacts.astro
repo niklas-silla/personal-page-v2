@@ -1,0 +1,57 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="quickfacts animate-on-scroll" aria-label="Quick Facts">
+  <div class="quickfacts-inner">
+    <div class="fact">
+      <p class="mono-label">// background</p>
+      <p class="fact-value">{site.quickFacts.background}</p>
+    </div>
+    <div class="fact">
+      <p class="mono-label">// focus</p>
+      <p class="fact-value">{site.quickFacts.focus}</p>
+    </div>
+    <div class="fact">
+      <p class="mono-label">// next</p>
+      <p class="fact-value">{site.quickFacts.next}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .quickfacts {
+    background-color: var(--bg-secondary);
+    border-top: var(--border-subtle);
+    border-bottom: var(--border-subtle);
+  }
+
+  .quickfacts-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 28px var(--section-pad-h);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 40px;
+  }
+
+  .fact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .fact-value {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+  }
+
+  @media (max-width: 639px) {
+    .quickfacts-inner {
+      grid-template-columns: 1fr;
+      gap: 24px 0;
+    }
+  }
+</style>

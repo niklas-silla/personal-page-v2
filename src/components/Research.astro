@@ -1,0 +1,83 @@
+---
+import { researchTopics } from '../data/research';
+---
+
+<section id="research" class="section-wrapper animate-on-scroll">
+  <div class="section-inner">
+    <h2 class="visually-hidden">Research</h2>
+    <div class="label-grid">
+      <p class="mono-label">// research</p>
+      <div class="research-content">
+        <p class="research-intro">
+          Ende 2026 plane ich, eine Promotion zu beginnen. Aktuelle Interessensgebiete:
+        </p>
+        <ul class="research-list" role="list">
+          {researchTopics.map((topic) => (
+            <li class="research-item">
+              <span class="research-arrow" aria-hidden="true">→</span>
+              <span>{topic}</span>
+            </li>
+          ))}
+        </ul>
+        <p class="research-footer">
+          Offen für Gespräche mit Lehrstühlen und industrienahen Forschungsgruppen.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .research-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .research-intro {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .research-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .research-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .research-arrow {
+    color: var(--accent-gold);
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+  }
+
+  .research-footer {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+</style>

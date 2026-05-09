@@ -1,0 +1,98 @@
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Subtle grid background */
+  background-image:
+    linear-gradient(var(--accent-gold-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--accent-gold-grid) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-attachment: fixed;
+}
+
+/* Typography defaults */
+h1, h2, h3 {
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+
+/* Utility classes */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--accent-gold-soft);
+  line-height: 1.4;
+}
+
+.section-wrapper {
+  border-top: var(--border-subtle);
+}
+
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--section-pad-v) var(--section-pad-h);
+}
+
+/* Two-column label layout */
+.label-grid {
+  display: grid;
+  grid-template-columns: var(--label-col) 1fr;
+  gap: 0 32px;
+  align-items: start;
+}
+
+@media (max-width: 639px) {
+  .label-grid {
+    grid-template-columns: 1fr;
+    gap: 12px 0;
+  }
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

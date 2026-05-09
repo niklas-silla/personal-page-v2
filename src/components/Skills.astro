@@ -1,0 +1,98 @@
+---
+import { skills } from '../data/skills';
+---
+
+<section id="skills" class="section-wrapper animate-on-scroll">
+  <div class="section-inner">
+    <h2 class="visually-hidden">Skills</h2>
+    <div class="label-grid">
+      <p class="mono-label">// skills</p>
+      <div class="skills-content">
+        {skills.map((category) => (
+          <div class="skill-category">
+            <div class="skill-category-header">
+              <span class="skill-num">{category.number}</span>
+              <p class="skill-title">{category.title}</p>
+              <div class="skill-line" aria-hidden="true"></div>
+            </div>
+            <div class="skill-pills">
+              {category.items.map((item) => (
+                <span class="skill-pill">{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skills-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .skill-category-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .skill-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-gold);
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+  }
+
+  .skill-title {
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+
+  .skill-line {
+    flex: 1;
+    height: 0.5px;
+    background-color: var(--accent-gold-line);
+  }
+
+  .skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .skill-pill {
+    padding: 6px 12px;
+    border: 0.5px solid rgba(212, 181, 114, 0.3);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-secondary);
+    transition: border-color 200ms ease, background-color 200ms ease;
+    cursor: default;
+  }
+
+  .skill-pill:hover {
+    border-color: var(--accent-gold);
+    background-color: rgba(212, 181, 114, 0.06);
+  }
+</style>

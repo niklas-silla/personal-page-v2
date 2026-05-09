@@ -1,0 +1,38 @@
+:root {
+  /* Backgrounds */
+  --bg-primary: #0a0a0a;
+  --bg-secondary: rgba(0, 0, 0, 0.4);
+
+  /* Text */
+  --text-primary: #fafafa;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-tertiary: rgba(255, 255, 255, 0.6);
+  --text-muted: rgba(255, 255, 255, 0.45);
+
+  /* Gold accent */
+  --accent-gold: #d4b572;
+  --accent-gold-soft: rgba(212, 181, 114, 0.7);
+  --accent-gold-line: rgba(212, 181, 114, 0.12);
+  --accent-gold-grid: rgba(212, 181, 114, 0.04);
+  --accent-gold-glow: rgba(212, 181, 114, 0.08);
+
+  /* Borders */
+  --border-subtle: 0.5px solid var(--accent-gold-line);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Layout */
+  --max-width: 1100px;
+  --section-pad-v: 48px;
+  --section-pad-h: 40px;
+  --label-col: 160px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --section-pad-v: 32px;
+    --section-pad-h: 20px;
+  }
+}

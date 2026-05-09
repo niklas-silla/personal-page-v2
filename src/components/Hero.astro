@@ -1,0 +1,170 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="hero section-wrapper">
+  <div class="hero-inner section-inner">
+    <div class="hero-content">
+      <p class="hero-tag mono-label">{site.tagline}</p>
+      <h1 class="hero-name">{site.name}</h1>
+      <div class="hero-gold-line" aria-hidden="true"></div>
+      <p class="hero-role">{site.role}</p>
+      <p class="hero-description">{site.description}</p>
+      <p class="hero-stack">
+        {site.techStack.map((item, i) => (
+          <>
+            <span class="stack-item">{item}</span>
+            {i < site.techStack.length - 1 && (
+              <span class="stack-sep" aria-hidden="true"> · </span>
+            )}
+          </>
+        ))}
+      </p>
+    </div>
+
+    <div class="hero-photo-container">
+      <div class="hero-photo-glow" aria-hidden="true"></div>
+      <img
+        src="/assets/profile.png"
+        alt="Niklas Silla"
+        class="hero-photo"
+        width="420"
+        height="560"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    border-top: none;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 0 64px;
+    align-items: center;
+    min-height: calc(100vh - 53px);
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .hero-tag {
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+
+  .hero-name {
+    font-size: 52px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+
+  .hero-gold-line {
+    width: 48px;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin-bottom: 20px;
+  }
+
+  .hero-role {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 28px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin-bottom: 28px;
+  }
+
+  .hero-stack {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-tertiary);
+  }
+
+  .stack-sep {
+    color: var(--accent-gold);
+  }
+
+  /* Photo */
+  .hero-photo-container {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    min-height: 540px;
+  }
+
+  .hero-photo-glow {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, var(--accent-gold-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hero-photo {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+    max-height: 560px;
+    object-fit: contain;
+    object-position: bottom;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+
+  /* Tablet */
+  @media (max-width: 1023px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding-top: 48px;
+    }
+
+    .hero-photo-container {
+      min-height: 300px;
+    }
+
+    .hero-photo {
+      max-height: 320px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 639px) {
+    .hero-name {
+      font-size: 36px;
+    }
+
+    .hero-photo-container {
+      display: none;
+    }
+  }
+</style>

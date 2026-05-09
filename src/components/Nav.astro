@@ -1,0 +1,66 @@
+---
+import { site } from '../data/site';
+---
+
+<header>
+  <nav class="nav-inner">
+    <span class="nav-name mono-label">{site.name}</span>
+    <ul class="nav-links" role="list">
+      <li><a href="#about">// about</a></li>
+      <li><a href="#skills">// skills</a></li>
+      <li><a href="#research">// research</a></li>
+      <li><a href="#contact">// contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: var(--border-subtle);
+  }
+
+  .nav-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px var(--section-pad-h);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .nav-name {
+    color: var(--text-primary);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    transition: color 200ms ease;
+  }
+
+  .nav-links a:hover {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 639px) {
+    .nav-links {
+      display: none;
+    }
+  }
+</style>

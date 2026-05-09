@@ -1,0 +1,65 @@
+---
+import { site } from '../data/site';
+---
+
+<footer id="contact" class="section-wrapper">
+  <div class="section-inner contact-inner">
+    <p class="mono-label">// contact — let's talk</p>
+    <nav class="contact-links" aria-label="Contact links">
+      <a href={site.links.email} class="contact-link contact-link--primary">email</a>
+      <a href={site.links.linkedin} class="contact-link" target="_blank" rel="noopener noreferrer">linkedin</a>
+      <a href={site.links.github} class="contact-link" target="_blank" rel="noopener noreferrer">github</a>
+      <a href={site.links.scholar} class="contact-link" target="_blank" rel="noopener noreferrer">scholar</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .contact-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+  .contact-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .contact-link {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    transition: color 200ms ease;
+  }
+
+  .contact-link:hover {
+    color: var(--text-primary);
+  }
+
+  .contact-link--primary {
+    color: var(--accent-gold);
+  }
+
+  .contact-link--primary:hover {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 639px) {
+    .contact-inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .contact-links {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  }
+</style>
